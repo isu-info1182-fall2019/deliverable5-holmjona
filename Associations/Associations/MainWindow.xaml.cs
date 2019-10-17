@@ -79,13 +79,51 @@ namespace Associations {
                 _Room.Teacher.Room = _Room;
                 //tbOut.Text = _Room.Teacher.FirstName;
 
-                foreach(Room r in _Rooms) {
+                foreach (Room r in _Rooms) {
                     tbOut.Text += r.Number + " | \r\n";
                 }
 
 
             }
 
+
+        }
+
+        private void btnMakeStudents_Click(object sender, RoutedEventArgs e) {
+            Room rm = new Room();
+            rm.Number = 13;
+            rm.Teacher = new Teacher();
+            rm.Teacher.FirstName = "Marty";
+            Teacher tch = rm.Teacher;
+            tch.MiddleName = "George";
+
+            tch.Room = rm;
+            rm.Teacher.Room = rm;
+
+            //tch.Room.Teacher.Room.Number = 15;
+            //rm.Teacher.Room.Teacher.Room.Number = 30;
+
+            Student stud1 = new Student() { FirstName = "Sushan" };
+            Student stud2 = new Student() { FirstName = "Meshari" };
+            Student stud3 = new Student() { FirstName = "Taki" };
+            Student stud4 = new Student() { FirstName = "Yumi" };
+
+            tch.Room.Students = new Student[37];
+
+            tch.Room.Students[0] = stud1;
+            tch.Room.Students[1] = stud4;
+            tch.Room.Students[2] = stud2;
+            tch.Room.Students[3] = stud3;
+
+            tch.Room.Students = new Student[3];
+
+            MessageBox.Show(rm.Number.ToString());
+
+
+
+            int[] arr;
+            arr = new int[4];
+            arr[1] = 2;
 
         }
     }

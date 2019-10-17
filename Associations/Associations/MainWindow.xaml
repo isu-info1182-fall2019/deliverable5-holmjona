@@ -12,6 +12,7 @@
         <TextBox x:Name="txtSeed" HorizontalAlignment="Left" Height="23" Margin="34,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnMakeRoom" Content="Make Room" HorizontalAlignment="Left" Margin="681,17,0,0" VerticalAlignment="Top" Width="75" Click="btnMakeRoom_Click"/>
         <Button x:Name="btnShow" Content="Show" HorizontalAlignment="Left" Margin="681,60,0,0" VerticalAlignment="Top" Width="75" Click="btnShow_Click"/>
+        <Button x:Name="btnMakeStudents" Content="Make Students" HorizontalAlignment="Left" Margin="681,188,0,0" VerticalAlignment="Top" Width="101" Click="btnMakeStudents_Click"/>
 
     </Grid>
 </Window>
