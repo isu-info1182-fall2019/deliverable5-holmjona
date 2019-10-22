@@ -22,6 +22,7 @@ namespace Associations {
         int[] ints = new int[5];
         Room[] _Rooms = new Room[4];
 
+
         public MainWindow() {
             InitializeComponent();
         }
@@ -108,14 +109,14 @@ namespace Associations {
             Student stud3 = new Student() { FirstName = "Taki" };
             Student stud4 = new Student() { FirstName = "Yumi" };
 
-            tch.Room.Students = new Student[37];
+            //tch.Room.Students = new Student[37];
 
-            tch.Room.Students[0] = stud1;
-            tch.Room.Students[1] = stud4;
-            tch.Room.Students[2] = stud2;
-            tch.Room.Students[3] = stud3;
+            //tch.Room.Students[0] = stud1;
+            //tch.Room.Students[1] = stud4;
+            //tch.Room.Students[2] = stud2;
+            //tch.Room.Students[3] = stud3;
 
-            tch.Room.Students = new Student[3];
+            //tch.Room.Students = new Student[3];
 
             MessageBox.Show(rm.Number.ToString());
 
@@ -125,6 +126,59 @@ namespace Associations {
             arr = new int[4];
             arr[1] = 2;
 
+        }
+
+        private void btnFillGrid_Click(object sender, RoutedEventArgs e) {
+            int[,] values = new int[4, 5];
+            //                      0, 1, 2, 3 
+            //    0  1  2  3  4
+            //  0
+            //  1
+            //  2
+            //  3
+            int seed = 1;
+                    Random rnd = new Random();
+            for (int row = 0; row < values.GetLength(0); row++) {
+                // 0 - 3
+                for (int col = 0; col < values.GetLength(1); col++) {
+                    // 0 - 4
+                  int rNum = rnd.Next(10);
+                    if(rNum < 3) {
+                    values[row, col] = 10 ; // 0, 10 ,20
+                    }else if(rNum < 8) {
+                        values[row, col] = 20; // 0, 10 ,20
+                    } else {
+                        //values[row, col] = 20; // 0, 10 ,20
+                    }
+                }
+            }
+
+            FillGrid(values);
+
+        }
+
+        private void FillGrid(int[,] values) {
+            grdFiller.Children.Clear();
+            for (int row = 0; row < values.GetLength(0); row++) {
+                for (int col = 0; col < values.GetLength(1); col++) {
+                    TextBlock tb = new TextBlock();
+                    Grid.SetColumn(tb, col);
+                    Grid.SetRow(tb, row);
+                    tb.FontSize = 20;
+                    grdFiller.Children.Add(tb);
+
+                    if(values[row,col] == 0) {
+                    tb.Text = "";
+                    }else if(values[row,col] == 10) {
+                        tb.Text = "S";
+                        tb.Foreground = new SolidColorBrush(Colors.Blue);
+                    } else {
+                        tb.Text = "M";
+                        tb.Foreground = new SolidColorBrush(Colors.Purple);
+                    }
+
+                }
+            }
         }
     }
 }

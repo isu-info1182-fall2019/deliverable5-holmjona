@@ -7,12 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="tbOut" HorizontalAlignment="Left" Margin="32,37,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="353" Width="625"/>
+        <TextBlock x:Name="tbOut" HorizontalAlignment="Left" Margin="681,108,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="43" Width="61"/>
         <Button x:Name="btnRandom" Content="Generate Random" HorizontalAlignment="Left" Margin="154,9,0,0" VerticalAlignment="Top" Width="125" Height="23" Click="btnRandom_Click"/>
         <TextBox x:Name="txtSeed" HorizontalAlignment="Left" Height="23" Margin="34,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnMakeRoom" Content="Make Room" HorizontalAlignment="Left" Margin="681,17,0,0" VerticalAlignment="Top" Width="75" Click="btnMakeRoom_Click"/>
         <Button x:Name="btnShow" Content="Show" HorizontalAlignment="Left" Margin="681,60,0,0" VerticalAlignment="Top" Width="75" Click="btnShow_Click"/>
         <Button x:Name="btnMakeStudents" Content="Make Students" HorizontalAlignment="Left" Margin="681,188,0,0" VerticalAlignment="Top" Width="101" Click="btnMakeStudents_Click"/>
-
+        <Grid x:Name="grdFiller" Margin="81,60,214,55">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Button x:Name="btnFillGrid" Content="Fill Grid" HorizontalAlignment="Left" Margin="334,10,0,0" VerticalAlignment="Top" Width="75" Click="btnFillGrid_Click"/>
     </Grid>
 </Window>

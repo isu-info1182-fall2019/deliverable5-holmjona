@@ -10,7 +10,7 @@ namespace Associations
     {
         private int _Number;
         private Teacher _Teacher;
-        private Student[] _Students = new Student[6];
+        private Student[,] _Students;
 
         public int Number {
             get { return _Number; }
@@ -26,8 +26,11 @@ namespace Associations
             }
         }
 
-        public Student[] Students {
+        public Student[,] Students {
             get {
+                if(_Students == null) {
+                    fillStudents();
+                }
                 return _Students;
             }
             set {
@@ -35,6 +38,12 @@ namespace Associations
             }
         }
 
+        private void fillStudents() {
+            _Students = new Student[4, 5];
+            
+
+
+        }
 
         public string SayTeacher()
         {
